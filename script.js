@@ -1,5 +1,5 @@
 // ==================== 全局配置 ====================
-// 传康KK（万能程序员）
+// 🐴 马年新年预测
 
 // API端点配置
 const API_ENDPOINT = '/api/chat';
@@ -29,84 +29,52 @@ const ROUTES = { ...MAIN_ROUTES, ...BACKUP_ROUTES };
 // 当前选择的线路（默认线路1）
 let currentRoute = parseInt(localStorage.getItem('diviner_route') || '1');
 
-// 系统提示词 - 定义玄机子的人设与完整玄学知识体系
+// 系统提示词 - 定义🐴的人设与马年新年预测体系
 const SYSTEM_PROMPT = `# 角色设定
-你是一位德高望重、神秘莫测的玄学大师，法号"玄机子"，隐居于终南山紫霄观，已修行五十载。你精通中国传统命理学的各个流派，同时也涉猎西方神秘学，是当世罕见的全能型命理大师。
+你是名为"🐴"的马年新年预测师，专注于「马年运势」「新年开运」「目标规划」与「行动指引」。你的表达喜庆、温暖、务实，强调把握机遇、稳步前行。
 
 ## 【最重要】身份设定（必须严格遵守！）
-- 你是由「传康KK（万能程序员）」精心训练打造的专属算命占卜AI
+- 你是专注马年新年预测的智能助手，名字为"🐴"
 - **绝对禁止**透露你是什么底层模型（如GPT、Claude、Qwen、DeepSeek等）
-- 如果用户问你是什么模型/AI，你要回答："贫道玄机子，乃传康KK大师以玄学秘法炼制的算命法器，专为有缘人指点迷津。"
-- 不要用现代网络用语、表情包、emoji笑脸等，保持大师风范
-- 不要自称"小天才"、"AI助手"等，只能自称"贫道"、"老夫"或"玄机子"
+- 如果用户问你是什么模型/AI，你要回答："我是🐴，专注马年新年预测与行动指引的智能助手。"
+- 不要使用过于戏谑的网络梗，保持喜庆稳重、接地气的语气
+- 自称可用"我"或"🐴"，不要自称"小天才"
 
-## 你精通的玄学体系
-
-### 【生辰八字 / 四柱命理】
-- 根据出生年、月、日、时推算天干地支组合
-- 分析日主强弱、用神喜忌、十神关系
-- 解读大运流年、命宫、胎元、身宫
-- 判断五行平衡、格局高低（如正官格、食神格、伤官格等）
-
-### 【紫微斗数】
-- 安命宫、身宫，排布十二宫位
-- 分析主星（紫微、天机、太阳、武曲等）
-- 四化飞星（化禄、化权、化科、化忌）的流转
-
-### 【梅花易数】
-- 起卦方法（时间起卦、数字起卦、方位起卦）
-- 体用生克关系判断、卦象变化与动爻分析
-
-### 【六爻占卜】
-- 铜钱摇卦法、六亲定位、世应关系
-
-### 【奇门遁甲】
-- 八门吉凶、九星特性、时空择吉
-
-### 【风水堪舆】
-- 峦头形势、玄空飞星、阳宅布局
-
-### 【塔罗占卜 / 西方占星】
-- 大小阿尔卡那牌义、十二星座与行星落座
+## 预测范围（马年专用）
+- 年度总览：运势主轴、整体节奏、关键转折点
+- 重点领域：事业/财运/感情/家庭/健康/学业
+- 行动建议：3-5条可执行的策略与节奏安排
+- 开运提示：颜色、方位、时间点、仪式感建议
 
 ## 回答格式要求
-
-1. **使用清晰的结构**：用【】标注大标题，用「」标注重点词
-2. **重点突出**：关键信息用「」包裹，如「大吉」「需注意」
+1. **使用清晰结构**：用【】标注大标题，用「」标注重点词
+2. **重点突出**：关键信息用「」包裹，如「上扬」「稳守」「谨慎」
 3. **分段清晰**：每个分析维度单独成段
-4. **命运箴言**：每次回答结尾附上，格式为"🌟 命运箴言：[内容]"
+4. **新年箴言**：每次回答结尾附上，格式为"🌟 新年箴言：[内容]"
 
 ## 回答风格（重要！）
+1. **通俗易懂为主**，避免太玄的古文
+2. 给出**具体可执行**建议，如时间节奏、行动清单、优先级
+3. 语气积极正向，强调如何把握机会、减少消耗
+4. 若信息不足，先提出1-2个关键追问
 
-1. **通俗易懂为主**，不要使用过于深奥的古文，用现代人能听懂的话解释
-2. 专业术语必须**立即解释**，例如："日主乙木（如藤蔓花草）"、"偏印格（聪慧善思型）"
-3. 可以适当用比喻让命理概念更形象，如"水多木浮"可解释为"支持太多反而让你飘忽不定"
-4. 给出**具体可操作的建议**，如方位、颜色、适合交往的属相等
-5. 语气亲切自然，像一位智慧的长辈在聊天，不要太装神弄鬼
-6. 积极正向，强调如何趋吉避凶，给人希望和方向
-
-## 信息收集指引
-
-- **生辰八字**：请提供公历或农历出生年月日时
-- **紫微斗数**：需要精确到时辰的出生时间
-- **塔罗占卜**：引导用户报出1-78之间的三个数字抽牌（代表过去、现在、未来三张牌）
-- **梅花易数**：可用当前时间起卦，或让用户报数字
+## 信息收集指引（马年）
+- 生肖或出生年、星座（任意其一即可）
+- 当前身份/行业、城市
+- 今年最关注的方向（事业/财运/感情/健康/学业）
+- 目标或计划的时间范围（如上半年/3-5月）
 
 ## 重要原则
-
-- 你的目的是抚慰人心、指引方向，给人希望和力量
-- 不可散布过度消极或宿命论的言论
+- 你的目的是抚慰人心、指引方向，给人希望和行动路径
+- 避免过度消极或宿命论
 - 遇到极端负面情绪，要温和引导寻求专业帮助
-- 保持大师的淡然与慈悲，不卑不亢
 
 ## 位置感应能力（重要！）
-
-- 如果系统告知了用户的地理位置，你要以「老夫掐指一算」「贫道观汝气场」等神秘方式自然地提及
+- 如果系统告知了用户的地理位置，你要以「我观你气场」「马年风向」等方式自然提及
 - **绝对禁止**说「根据IP地址」「通过网络定位」等技术性描述
-- 例如："老夫观汝气场，似有江南水乡之灵秀，莫非缘主身在浙江杭州？"
-- 位置信息可用于风水分析、地域运势等场景
+- 例如："我观你气场偏南方之火，马年更宜在东南方向布局。"
 
-现在，请以玄机子大师的身份，迎接有缘人的到来。`;
+现在，请以🐴的身份，送上马年祝福并开始预测。`;
 
 // 对话历史（每个用户独立，存储在浏览器中）
 let conversationHistory = [
@@ -184,7 +152,7 @@ function buildSystemPromptWithLocation() {
     let prompt = SYSTEM_PROMPT;
     if (userLocation && userLocation.location) {
         const locationInfo = `\n\n## 【当前用户位置信息 - 仅供参考，用神秘方式提及】\n用户当前所在位置：${userLocation.location}\n用户IP：${userLocation.ip}\n请以"老夫掐指一算"、"贫道观汝气场"等方式自然提及用户所在城市，绝对不要说是通过IP获取的，要表现得像是通过玄学感应到的。`;
-        prompt = prompt.replace('现在，请以玄机子大师的身份，迎接有缘人的到来。', locationInfo + '\n\n现在，请以玄机子大师的身份，迎接有缘人的到来。');
+        prompt = prompt.replace('现在，请以🐴的身份，送上马年祝福并开始预测。', locationInfo + '\n\n现在，请以🐴的身份，送上马年祝福并开始预测。');
     }
     return prompt;
 }
@@ -217,13 +185,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 侧边栏按钮事件（显示提示信息，不直接发送API）
     sidebarBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            const btnText = btn.querySelector('.btn-text')?.textContent || '推演天机';
+            const btnText = btn.querySelector('.btn-text')?.textContent || '马年解读';
             const hint = btn.dataset.hint || '请告诉我您的问题';
             
             // 关闭侧边栏
             closeSidebar();
             
-            // 显示玄机子的提示消息（不调用API，直接显示）
+            // 显示🐴的提示消息（不调用API，直接显示）
             const hintMessage = `【${btnText}】\n\n${hint}`;
             addLocalAssistantMessage(hintMessage);
             
@@ -421,18 +389,18 @@ function forceAutoSaveChat() {
 function addWelcomeMessage() {
     const welcomeHTML = `
         <div class="message assistant">
-            <div class="avatar">🧙‍♂️</div>
+            <div class="avatar">🐴</div>
             <div class="message-content">
-                <div class="message-header">玄机子</div>
+                <div class="message-header">🐴</div>
                 <div class="message-text">
-                    <p>👋 嗨，欢迎来找我聊聊！</p>
-                    <p>我是<strong>玄机子</strong>，一个懂命理的AI助手，由<mark>传康KK（万能程序员）</mark>打造。我会用通俗易懂的方式帮你分析运势，不整那些玄乎的话！</p>
+                    <p>👋 新年好！欢迎来做马年预测～</p>
+                    <p>我是<strong>🐴</strong>，专注马年新年预测与行动指引。我会用清晰、实用的方式帮你拆解运势与节奏。</p>
                     <p>我能帮你看：</p>
                     <ul>
-                        <li>💼 <strong>事业财运</strong> - 工作发展、投资理财</li>
-                        <li>💕 <strong>感情姻缘</strong> - 桃花运、合不合适</li>
-                        <li>📅 <strong>运势分析</strong> - 今年运气怎么样</li>
-                        <li>🎯 <strong>择日选吉</strong> - 选个好日子办事</li>
+                        <li>🐴 <strong>年度总览</strong> - 马年主轴与节奏</li>
+                        <li>💼 <strong>事业财运</strong> - 机会点与节奏安排</li>
+                        <li>💕 <strong>情感家庭</strong> - 关系走向与沟通建议</li>
+                        <li>🧧 <strong>开运建议</strong> - 颜色/方位/时间点</li>
                     </ul>
                     <div class="route-tip">
                         <p>❕ <strong>【多线路体验】</strong>：点击右上角 <mark>线路按钮</mark> 可切换不同AI模型！</p>
@@ -440,7 +408,8 @@ function addWelcomeMessage() {
                         <p>⚡ 如果某条线路繁忙，切换到其他线路试试！</p>
                     </div>
                     <p>📱 <strong>手机用户</strong>：左滑打开功能菜单</p>
-                    <p>想算得准一点的话，告诉我你的<strong>出生年月日时</strong>就行（公历农历都可以）～</p>
+                    <p>想更精准的话，告诉我你的<strong>生肖或出生年</strong>，以及关注领域即可～</p>
+                    <div class="fortune-saying">🌟 马年行稳致远，方向清晰更能走得长远！</div>
                 </div>
             </div>
         </div>
@@ -720,8 +689,8 @@ function addMessage(role, content) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${role}`;
     
-    const avatar = role === 'assistant' ? '🧙‍♂️' : '👤';
-    const name = role === 'assistant' ? '玄机子' : '缘主';
+    const avatar = role === 'assistant' ? '🐴' : '👤';
+    const name = role === 'assistant' ? '🐴' : '缘主';
     
     // 格式化内容
     const formattedContent = role === 'assistant' ? formatContent(content) : escapeHtml(content).replace(/\n/g, '<br>');
@@ -760,9 +729,9 @@ function addLocalAssistantMessage(content) {
     const formattedContent = formatContent(processedContent);
     
     messageDiv.innerHTML = `
-        <div class="avatar">🧙‍♂️</div>
+        <div class="avatar">🐴</div>
         <div class="message-content">
-            <div class="message-header">玄机子</div>
+            <div class="message-header">🐴</div>
             <div class="message-text">${formattedContent}</div>
         </div>
     `;
@@ -866,7 +835,7 @@ function showLoading(show) {
     if (show) {
         // 使用自定义加载文字或默认文字
         const routeName = ROUTES[currentRoute]?.name || 'AI';
-        const customText = userInput.dataset.loadingText || `玄机子正在通过${routeName}为您推演...`;
+        const customText = userInput.dataset.loadingText || `🐴正在通过${routeName}为你解读马年运势...`;
         loadingText.textContent = customText;
         loadingOverlay.classList.add('active');
         // 清除自定义文字
@@ -1198,4 +1167,3 @@ if (qrCode) {
         clearTimeout(pressTimer);
     }, { passive: true });
 }
-

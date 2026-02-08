@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>🔮 玄机子 - AI 智能算命助手</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔮</text></svg>">
+    <title>🐴 马年新年预测</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐴</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -16,127 +16,84 @@
     <!-- 侧边栏 -->
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <span class="sidebar-logo">🔮</span>
-            <h2>玄学宝典</h2>
+            <span class="sidebar-logo">🐴</span>
+            <h2>马年锦囊</h2>
             <button class="sidebar-close" id="sidebarClose">✕</button>
         </div>
         
         <div class="sidebar-content">
-            <!-- 中国传统命理 -->
+            <!-- 马年总览 -->
             <div class="sidebar-category">
-                <h3>📜 中国传统命理</h3>
+                <h3>🐴 马年总览</h3>
                 <div class="sidebar-items">
-                    <button class="sidebar-btn" data-hint="📋 生辰八字推算需要以下信息：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🗓️ 出生日期：请提供公历或农历的年月日\n⏰ 出生时辰：如上午9点、晚上11点等（越精确越好）\n👤 性别：男/女\n📍 出生地：省市即可\n\n💡 示例：我叫张三，1990年5月15日上午10点在北京出生的男性，请帮我排八字。">
-                        <span class="btn-icon">📅</span>
-                        <span class="btn-text">生辰八字</span>
+                    <button class="sidebar-btn" data-hint="🐴 马年年度总运需要以下信息：\n\n✨ 姓名/称呼\n🎂 出生年或生肖\n🎯 关注重点（事业/财运/感情/健康）\n📍 所在城市\n\n💡 示例：我叫小林，1996年属鼠，人在杭州，想看马年的事业和财运。">
+                        <span class="btn-icon">🐴</span>
+                        <span class="btn-text">年度总运</span>
                     </button>
-                    <button class="sidebar-btn" data-hint="⭐ 紫微斗数排盘需要以下信息：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🗓️ 出生日期：公历年月日\n⏰ 出生时辰：需精确到具体时间（如上午10:30）\n👤 性别：男/女\n📍 出生地：具体城市\n\n💡 示例：我叫李梅，女性，1985年3月20日上午10:30在上海出生，请帮我排紫微命盘。">
-                        <span class="btn-icon">⭐</span>
-                        <span class="btn-text">紫微斗数</span>
-                    </button>
-                    <button class="sidebar-btn" data-hint="🌸 梅花易数起卦方法：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🤔 第一步：心中专注默念您要问的具体问题\n🔢 第二步：随机说出两个1-100之间的数字\n❓ 第三步：简单描述您的问题背景\n\n💡 示例：我叫王五，想问关于换工作的事情，我选择的数字是23和67。我现在的工作不太满意，在考虑是否要跳槽。">
-                        <span class="btn-icon">🌸</span>
-                        <span class="btn-text">梅花易数</span>
-                    </button>
-                    <button class="sidebar-btn" data-hint="🎲 六爻占卜起卦方法：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🤔 第一步：心中专注默念您要问的具体问题\n🎯 第二步：说出六个1-6之间的数字（代表六次掷铜钱）\n📝 第三步：详细说明您要问的事情\n\n💡 示例：我叫小红，想问感情问题，六个数字是：3、1、5、2、6、4。我和男朋友交往两年了，想知道我们的关系发展如何。">
-                        <span class="btn-icon">🔮</span>
-                        <span class="btn-text">六爻占卜</span>
-                    </button>
-                    <button class="sidebar-btn" data-hint="🧭 奇门遁甲择吉需要以下信息：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🎯 具体事项：如开业、搬家、结婚、出行、求职等\n📅 时间范围：您希望在什么时间段内进行\n🌍 地点：在哪个城市进行\n💼 详细情况：事情的具体背景和要求\n\n💡 示例：我叫陈刚，计划下个月在深圳开一家餐厅，希望选个开业吉日，时间最好在3月15日到31日之间。">
-                        <span class="btn-icon">🧭</span>
-                        <span class="btn-text">奇门遁甲</span>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- 相术风水 -->
-            <div class="sidebar-category">
-                <h3>🏠 相术风水</h3>
-                <div class="sidebar-items">
-                    <button class="sidebar-btn" data-hint="👤 面相分析需要描述以下特征：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n👤 脸型：圆形、方形、瓜子脸、长脸等\n🧠 额头：高低、宽窄、有无纹路\n👁️ 眉眼：眉毛浓淡、眼睛大小形状\n👃 鼻子：高挺或塌陷、鼻翼大小\n👄 嘴唇：厚薄、大小、嘴角走向\n🦴 下巴：尖圆、方正、有无双下巴\n\n💡 示例：我叫小明，圆脸，额头较宽，眉毛浓密，眼睛不大但有神，鼻子中等，嘴唇适中，下巴圆润。">
-                        <span class="btn-icon">😍</span>
-                        <span class="btn-text">面相分析</span>
-                    </button>
-                    <button class="sidebar-btn" data-hint="🤚 手相分析需要描述以下纹路：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n❤️ 生命线：从拇指与食指间延伸，描述长短、深浅、是否中断\n🧠 智慧线：从生命线起点横向延伸，描述长度和走向\n💕 感情线：最上方横线，描述深浅和终点位置\n💰 财运线：小指下方竖线，有无及深浅\n✋ 手型：手掌厚薄、手指长短\n\n💡 示例：我叫小芳，生命线很深很长绕过拇指根部，智慧线中等长度略向下，感情线较浅延伸到食指下方。">
-                        <span class="btn-icon">🤚</span>
-                        <span class="btn-text">手相解读</span>
-                    </button>
-                    <button class="sidebar-btn" data-hint="🏠 风水分析需要以下房屋信息：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🧭 房屋朝向：大门朝向哪个方位（东南西北）\n🏗️ 户型布局：几室几厅，房间分布\n🚪 门窗位置：大门、卧室门、窗户的具体位置\n🛏️ 家具摆放：床、沙发、办公桌等主要家具位置\n🌊 周边环境：是否临水、临路、有无高楼遮挡\n\n💡 示例：我叫老李，家里大门朝南，三室两厅，主卧在东边，客厅朝南有大窗，厨房在北边，楼下是马路。">
-                        <span class="btn-icon">🏠</span>
-                        <span class="btn-text">风水堪舆</span>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- 西方神秘学 -->
-            <div class="sidebar-category">
-                <h3>🌍 西方神秘学</h3>
-                <div class="sidebar-items">
-                    <button class="sidebar-btn" data-hint="🃏 塔罗占卜抽牌方法：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🤔 第一步：心中专注默念您要问的具体问题\n🔢 第二步：凭直觉说出1-78之间的三个数字（代表过去、现在、未来三张牌）\n❓ 第三步：详细描述您想了解的情况\n🎯 第四步：说明您希望得到什么样的指引\n\n💡 示例：我叫小雨，想问职业发展问题，选择数字：12、42、67。我现在在一家公司工作三年了，想知道是否应该寻求新的发展机会。">
-                        <span class="btn-icon">🃏</span>
-                        <span class="btn-text">塔罗占卜</span>
-                    </button>
-                    <button class="sidebar-btn" data-hint="✨ 星座运势分析需要以下信息：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n♈ 星座：如果知道请直接说明\n🗓️ 出生日期：如果不确定星座，请提供出生日期\n🎯 关注重点：想了解哪方面运势（爱情、事业、财运、健康等）\n📅 时间范围：想了解近期哪个时间段的运势\n\n💡 示例：我叫小丽，天秤座（或1990年10月15日出生），想了解这个月的爱情和事业运势。">
-                        <span class="btn-icon">✨</span>
-                        <span class="btn-text">星座运势</span>
-                    </button>
-                    <button class="sidebar-btn" data-hint="🌌 占星星盘分析需要精确信息：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🗓️ 出生日期：公历年月日\n⏰ 出生时间：精确到分钟（如14:30）\n📍 出生地点：具体城市名称\n🎯 分析重点：想了解性格、爱情、事业等哪个方面\n\n⚠️ 注意：时间越精确，星盘越准确\n\n💡 示例：我叫小杰，1992年7月8日下午2:30在广州出生，想了解我的性格特点和事业发展。">
-                        <span class="btn-icon">🌌</span>
-                        <span class="btn-text">占星分析</span>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- 运势测算 -->
-            <div class="sidebar-category">
-                <h3>🔮 运势测算</h3>
-                <div class="sidebar-items">
-                    <button class="sidebar-btn" data-hint="☀️ 今日运势查询信息：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🐲 生肖：十二生肖中的哪一个\n♈ 星座：十二星座中的哪一个\n🎯 关注重点：想了解哪方面运势\n\n📋 可选择提供其中一个即可：\n• 生肖：鼠、牛、虎、兔、龙、蛇、马、羊、猴、鸡、狗、猪\n• 星座：白羊、金牛、双子、巨蟹、狮子、处女、天秤、天蝎、射手、摩羯、水瓶、双鱼\n\n💡 示例：我叫小龙，属龙的，想了解今天的整体运势。">
-                        <span class="btn-icon">☀️</span>
-                        <span class="btn-text">今日运势</span>
-                    </button>
-                    <button class="sidebar-btn" data-hint="📆 本周运势查询信息：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🐲 生肖：十二生肖中的哪一个\n♈ 星座：十二星座中的哪一个\n🎯 关注重点：爱情、事业、财运、健康、学业等\n📅 具体时间：想了解哪一周的运势\n\n💡 示例：我叫小天，天蝎座，想了解本周的爱情和事业运势。">
-                        <span class="btn-icon">📆</span>
-                        <span class="btn-text">本周运势</span>
-                    </button>
-                    <button class="sidebar-btn" data-hint="🗓️ 流年运势分析需要以下信息：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🗓️ 出生日期：公历年月日\n⏰ 出生时间：最好精确到时辰\n👤 性别：男/女\n🎯 关注重点：想了解今年哪方面的运势变化\n📈 具体问题：有什么特别想了解的事情\n\n💡 示例：我叫小美，1988年6月12日上午9点出生的女性，想了解今年的事业和财运变化。">
+                    <button class="sidebar-btn" data-hint="🗓️ 马年节奏分析需要：\n\n✨ 姓名/称呼\n🎂 出生年或生肖\n📅 关注月份/季度（如1-3月、上半年）\n🎯 计划事项（跳槽/考试/恋爱/搬家等）\n\n💡 示例：我叫小悦，属兔，想看马年上半年工作节奏和跳槽窗口。">
                         <span class="btn-icon">🗓️</span>
-                        <span class="btn-text">流年运势</span>
+                        <span class="btn-text">流年节奏</span>
                     </button>
-                    <button class="sidebar-btn" data-hint="💰 事业财运分析需要以下信息：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🗓️ 基本信息：出生年月日时（或生肖+星座）\n💼 当前状况：目前的工作或事业情况\n🎯 具体问题：想了解的具体方面\n  • 事业发展方向\n  • 财运旺衰时期\n  • 投资理财建议\n  • 职业转换时机\n\n💡 示例：我叫老王，1985年属牛天秤座，目前做销售工作，想了解今年的事业发展和投资运势。">
-                        <span class="btn-icon">💰</span>
-                        <span class="btn-text">事业财运</span>
-                    </button>
-                    <button class="sidebar-btn" data-hint="💕 姻缘情感分析需要以下信息：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🗓️ 基本信息：出生年月日时（或生肖+星座）\n💑 感情状况：单身/恋爱中/已婚\n🎯 想了解的问题：\n  • 桃花运势和时机\n  • 现有感情发展\n  • 婚姻宫分析\n  • 感情中的注意事项\n\n💡 示例：我叫小云，1990年属马双鱼座，目前单身，想了解什么时候会遇到合适的人，以及我的感情运势。">
-                        <span class="btn-icon">💕</span>
-                        <span class="btn-text">姻缘情感</span>
-                    </button>
-                    <button class="sidebar-btn" data-hint="❤️ 健康运势分析需要以下信息：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🗓️ 出生信息：年月日时\n👤 性别：男/女\n🏥 健康关注：\n  • 身体哪个部位需要特别注意\n  • 有无家族遗传病史\n  • 想了解哪个时间段的健康运势\n  • 养生保健建议\n\n💡 示例：我叫阿强，1987年3月5日晚上8点出生的男性，最近总感觉疲劳，想了解健康方面需要注意什么。">
-                        <span class="btn-icon">❤️</span>
-                        <span class="btn-text">健康运势</span>
+                    <button class="sidebar-btn" data-hint="⚠️ 马年风险提醒需要：\n\n✨ 姓名/称呼\n🎂 出生年或生肖\n💼 身份/行业\n😟 主要担心的问题（如健康、破财、关系）\n\n💡 示例：我叫阿诚，属猴，做销售，担心马年财务波动和业绩压力。">
+                        <span class="btn-icon">⚠️</span>
+                        <span class="btn-text">风险提醒</span>
                     </button>
                 </div>
             </div>
-            
-            <!-- 特殊服务 -->
+
+            <!-- 开运指南 -->
             <div class="sidebar-category">
-                <h3>✨ 特殊服务</h3>
+                <h3>🧧 开运指南</h3>
                 <div class="sidebar-items">
-                    <button class="sidebar-btn" data-hint="📿 择日择吉需要以下详细信息：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🎯 具体事项：\n  • 结婚订婚、开业开工\n  • 搬家入宅、签约合作\n  • 出行旅游、手术治疗等\n📅 时间范围：希望在什么时间段内进行\n👥 相关人员：主要当事人的生肖或生辰\n📍 地点：在哪个城市进行\n\n💡 示例：我叫小张，计划下个月结婚，新郎属龙新娘属鸡，希望在4月15日到30日之间在北京办婚礼，请帮忙选个好日子。">
-                        <span class="btn-icon">📿</span>
-                        <span class="btn-text">择日择吉</span>
+                    <button class="sidebar-btn" data-hint="🧭 开运颜色/方位需要：\n\n✨ 姓名/称呼\n🎂 出生年或生肖\n📍 常驻城市\n🎯 目标方向（财运/事业/感情/健康）\n\n💡 示例：我叫小琪，属蛇，常驻成都，想要马年事业更稳。">
+                        <span class="btn-icon">🧭</span>
+                        <span class="btn-text">开运方位</span>
                     </button>
-                    <button class="sidebar-btn" data-hint="✏️ 起名改名需要以下信息：\n\n✨ 您的姓名：请告知您的姓名（用于称呼）\n👤 基本信息：\n  • 姓氏（如：张、李、王等）\n  • 性别：男/女\n  • 出生年月日时\n🎯 起名要求：\n  • 希望名字有什么寓意\n  • 字数要求（单字名或双字名）\n  • 有无特别喜欢的字\n  • 有无需要避开的字\n\n💡 示例：我叫李妈妈，给我儿子起名，姓李，男孩，2023年5月10日上午10点出生，希望起个寓意聪明健康的双字名，最好带木字旁。">
-                        <span class="btn-icon">✏️</span>
-                        <span class="btn-text">起名改名</span>
+                    <button class="sidebar-btn" data-hint="🧨 新年仪式建议需要：\n\n✨ 姓名/称呼\n📅 想做的时间（除夕/初一/元宵等）\n🏠 场景（家里/办公室/出行）\n💰 预算（可选）\n\n💡 示例：我叫阿楠，想在初一做个简单的新年仪式，家里即可。">
+                        <span class="btn-icon">🧨</span>
+                        <span class="btn-text">新年仪式</span>
                     </button>
-                    <button class="sidebar-btn" data-hint="💑 八字合婚需要双方完整信息：\n\n✨ 您的姓名：请告知您的姓名（用于称呼）\n👨 男方信息：\n  • 出生年月日时（公历或农历）\n  • 姓名（可用化名）\n👩 女方信息：\n  • 出生年月日时（公历或农历）\n  • 姓名（可用化名）\n🎯 想了解的问题：\n  • 八字是否相配\n  • 婚姻中需要注意什么\n  • 最佳结婚时机\n\n💡 示例：我叫小红，男方小明1988年3月15日上午9点，我是1990年7月20日下午3点，我们准备结婚，想看看八字合不合。">
-                        <span class="btn-icon">💑</span>
-                        <span class="btn-text">八字合婚</span>
+                    <button class="sidebar-btn" data-hint="✅ 马年宜忌清单需要：\n\n✨ 姓名/称呼\n🎂 生肖或出生年\n🎯 关注领域（事业/财运/感情/健康）\n\n💡 示例：我叫小周，属鸡，想知道马年事业上有哪些宜忌。">
+                        <span class="btn-icon">✅</span>
+                        <span class="btn-text">宜忌清单</span>
                     </button>
-                    <button class="sidebar-btn" data-hint="🌙 周公解梦需要详细梦境描述：\n\n✨ 姓名：请告知您的姓名（用于称呼）\n🌃 梦境内容：\n  • 梦中的主要场景和人物\n  • 具体发生了什么事情\n  • 梦中的情绪感受\n  • 梦境的颜色、声音等细节\n⏰ 梦境时间：什么时候做的梦\n🤔 个人情况：最近的生活状况和心理状态\n❓ 特别疑问：梦中哪个部分最让您印象深刻\n\n💡 示例：我叫小林，昨晚梦见自己在一个很大的房子里迷路了，房间很多但都是空的，我一直在找出口但找不到，感觉很焦虑。">
-                        <span class="btn-icon">🌙</span>
-                        <span class="btn-text">周公解梦</span>
+                </div>
+            </div>
+
+            <!-- 目标规划 -->
+            <div class="sidebar-category">
+                <h3>🎯 目标规划</h3>
+                <div class="sidebar-items">
+                    <button class="sidebar-btn" data-hint="💼 事业计划需要：\n\n✨ 姓名/称呼\n💼 当前职位/行业\n🎯 马年目标（升职/转岗/跳槽等）\n📅 目标期限\n\n💡 示例：我叫佳佳，在互联网运营，想在马年上半年完成转岗。">
+                        <span class="btn-icon">💼</span>
+                        <span class="btn-text">事业计划</span>
+                    </button>
+                    <button class="sidebar-btn" data-hint="💰 财务规划需要：\n\n✨ 姓名/称呼\n📊 收入结构/预算区间（可选）\n🎯 目标（存钱/投资/还债/攒首付）\n⚖️ 风险偏好（保守/稳健/激进）\n\n💡 示例：我叫阿泽，想在马年攒10万，偏稳健。">
+                        <span class="btn-icon">💰</span>
+                        <span class="btn-text">财务规划</span>
+                    </button>
+                    <button class="sidebar-btn" data-hint="📚 学习成长需要：\n\n✨ 姓名/称呼\n📖 想学习的方向\n🎯 目标用途（升职/转行/兴趣）\n⏰ 每周可投入时间\n\n💡 示例：我叫小宁，想学习数据分析，每周能投入6小时。">
+                        <span class="btn-icon">📚</span>
+                        <span class="btn-text">学习成长</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 关系与健康 -->
+            <div class="sidebar-category">
+                <h3>🌟 关系与健康</h3>
+                <div class="sidebar-items">
+                    <button class="sidebar-btn" data-hint="💕 情感运势需要：\n\n✨ 姓名/称呼\n💑 情感状态（单身/恋爱中/已婚）\n🎯 想了解的重点（桃花/稳定/沟通）\n\n💡 示例：我叫小雨，单身，想看马年的桃花和遇见方式。">
+                        <span class="btn-icon">💕</span>
+                        <span class="btn-text">情感运势</span>
+                    </button>
+                    <button class="sidebar-btn" data-hint="🏠 家庭关系建议需要：\n\n✨ 姓名/称呼\n👪 关系对象（父母/伴侣/孩子）\n🤝 目前状况（距离/沟通/压力）\n\n💡 示例：我叫阿琳，和父母沟通少，想在马年改善关系。">
+                        <span class="btn-icon">🏠</span>
+                        <span class="btn-text">家庭关系</span>
+                    </button>
+                    <button class="sidebar-btn" data-hint="❤️ 健康状态提醒需要：\n\n✨ 姓名/称呼\n🧭 关注部位/症状\n⏰ 作息与运动情况\n\n💡 示例：我叫阿杰，常熬夜，想看马年健康重点和作息建议。">
+                        <span class="btn-icon">❤️</span>
+                        <span class="btn-text">健康状态</span>
                     </button>
                 </div>
             </div>
@@ -150,15 +107,6 @@
             </div>
         </div>
         
-        <!-- 侧边栏页脚 -->
-        <div class="sidebar-footer">
-            <div class="author-card">
-                <p><strong>👨‍💻 传康 kk</strong></p>
-                <p>📱 微信: 1837620622</p>
-                <p>📧 2040168455@qq.com</p>
-                <p>🐟 闲鱼/B站: 万能程序员</p>
-            </div>
-        </div>
     </aside>
     
     <!-- 侧边栏遮罩 -->
@@ -170,8 +118,8 @@
         <header class="top-nav">
             <button class="menu-btn" id="menuBtn">☰</button>
             <div class="nav-title">
-                <div class="master-avatar">🧙‍♂️</div>
-                <h1>玄机子</h1>
+                <div class="master-avatar">🐴</div>
+                <h1>🐴</h1>
             </div>
             <div class="nav-actions">
                 <button class="new-chat-btn" id="newChatBtn" title="新建对话">➕</button>
@@ -184,23 +132,23 @@
         <div class="chat-container" id="chatContainer">
             <!-- 欢迎消息 -->
             <div class="message assistant">
-                <div class="avatar">🧙‍♂️</div>
+                <div class="avatar">🐴</div>
                 <div class="message-content">
-                    <div class="message-header">玄机子</div>
+                    <div class="message-header">🐴</div>
                     <div class="message-text">
-                        <p>👋 嗨，欢迎来找我聊聊！</p>
-                        <p>我是<strong>玄机子</strong>，一个懂命理的AI助手，由<mark>传康KK（万能程序员）</mark>打造。我会用通俗易懂的方式帮你分析运势，不整那些玄乎的话！</p>
+                        <p>👋 新年好！欢迎来做马年预测～</p>
+                        <p>我是<strong>🐴</strong>，专注马年新年预测与行动指引。我会用清晰、实用的方式帮你拆解运势与节奏。</p>
                         <p>我能帮你看：</p>
                         <ul>
-                            <li>💼 <strong>事业财运</strong> - 工作发展、投资理财</li>
-                            <li>💕 <strong>感情姻缘</strong> - 桃花运、合不合适</li>
-                            <li>📅 <strong>运势分析</strong> - 今年运气怎么样</li>
-                            <li>🎯 <strong>择日选吉</strong> - 选个好日子办事</li>
+                            <li>🐴 <strong>年度总览</strong> - 马年主轴与节奏</li>
+                            <li>💼 <strong>事业财运</strong> - 机会点与节奏安排</li>
+                            <li>💕 <strong>情感家庭</strong> - 关系走向与沟通建议</li>
+                            <li>🧧 <strong>开运建议</strong> - 颜色/方位/时间点</li>
                         </ul>
                         <p>⌛️ <strong>提示</strong>：顶部可以切换线路，如果一个线路繁忙就换另一个试试！</p>
                         <p>⌛️ <strong>手机用户</strong>：左滑打开功能菜单</p>
-                        <p>想算得准一点的话，告诉我你的<strong>出生年月日时</strong>就行（公历农历都可以）～</p>
-                        <div class="fortune-saying">🌟 命运掌握在自己手中，我只是帮你看清方向！</div>
+                        <p>想更精准的话，告诉我你的<strong>生肖或出生年</strong>，以及关注领域即可～</p>
+                        <div class="fortune-saying">🌟 马年行稳致远，方向清晰更能走得长远！</div>
                     </div>
                 </div>
             </div>
@@ -209,7 +157,7 @@
         <!-- 输入区域 -->
         <div class="input-section">
             <div class="input-wrapper">
-                <textarea id="userInput" placeholder="请在此输入您的困惑，寻求解惑..." rows="1"></textarea>
+                <textarea id="userInput" placeholder="写下你的马年关注点或新年目标..." rows="1"></textarea>
                 <button id="sendBtn" class="send-btn">
                     <span class="send-icon">✨</span>
                 </button>
@@ -218,8 +166,8 @@
         
         <!-- 底部信息 -->
         <div class="bottom-info">
-            <p>传康KK（万能程序员）| 仅供娱乐，命运掌握在自己手中</p>
-            <p class="author-wechat">📱 微信：1837620622 | 有问题欢迎反馈</p>
+            <p>新年快乐| 仅供娱乐，命运掌握在自己手中</p>
+            <p class="author-wechat">有问题欢迎反馈</p>
             <button class="donation-btn" id="donationBtn" title="支持作者，感谢赞赏">
                 <span class="donation-icon">❤️</span>
                 <span>赞赏支持</span>
@@ -242,11 +190,6 @@
                     <p class="scan-tip">📱 扫码赞赏，感谢支持！</p>
                 </div>
                 <div class="donation-footer">
-                    <p class="author-info">
-                        <strong>传康KK</strong> | 万能程序员<br>
-                        📱 微信：1837620622<br>
-                        🐟 闲鱼/B站：万能程序员
-                    </p>
                     <p class="thanks-text">您的每一份支持都是我前进的动力！❤️</p>
                 </div>
             </div>
@@ -257,7 +200,7 @@
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-content">
             <div class="loading-spinner"></div>
-            <p id="loadingText">玄机子正在为您推演天机...</p>
+            <p id="loadingText">🐴正在为你解读马年运势...</p>
         </div>
     </div>
 

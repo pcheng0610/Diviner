@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>玄机子 - 后台管理</title>
+    <title>🐴 - 后台管理</title>
     <style>
         /* ==================== 基础样式 ==================== */
         * {
@@ -545,7 +545,7 @@
     <!-- 登录页面 -->
     <div class="login-container" id="loginContainer">
         <div class="login-box">
-            <h1>🔮 玄机子后台</h1>
+            <h1>🔮 🐴后台</h1>
             <input type="password" id="passwordInput" placeholder="请输入管理密码" autocomplete="off">
             <button onclick="login()">进入管理</button>
             <p class="error-msg" id="errorMsg">密码错误，请重试</p>
@@ -555,7 +555,7 @@
     <!-- 管理面板 -->
     <div class="admin-container" id="adminContainer">
         <div class="admin-header">
-            <h1>🔮 玄机子 · 对话管理</h1>
+            <h1>🔮 🐴 · 对话管理</h1>
             <div class="stats">
                 <div class="stat-item">
                     <div class="number" id="totalRecords">0</div>
@@ -830,7 +830,7 @@
                                     <div class="content">${escapeHtml(record.question || '')}</div>
                                 </div>
                                 <div class="record-msg assistant">
-                                    <div class="role">🧙‍♂️ 玄机子回答</div>
+                                    <div class="role">🐴 🐴回答</div>
                                     <div class="content ${isLong ? 'collapsed' : ''}" id="answer-${globalIndex}">${answerFormatted}</div>
                                     ${isLong ? `<button class="expand-btn" onclick="toggleExpand(${globalIndex})">📖 展开全文</button>` : ''}
                                 </div>
