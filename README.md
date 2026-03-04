@@ -6,7 +6,7 @@
 
 ## 🌟 项目简介
 
-本项目是一个以「马年新年预测」为主题的前端页面，支持本地预览与 Cloudflare Pages 部署。  
+本项目是一个以「马年新年预测」为主题的前端页面，支持本地预览与 Vercel 部署。  
 前后端统一部署，API 密钥安全存储在服务端环境变量中。
 
 ---
@@ -35,54 +35,52 @@ Diviner/
 ├── index.html          # 前端页面
 ├── styles.css          # 主题样式
 ├── script.js           # 交互逻辑
-├── functions/          # Cloudflare 云端函数
-│   └── api/
-│       └── chat.js     # AI 通信代理（密钥安全存储）
+├── api/
+│   └── chat.js         # Vercel Serverless API（支持 HF / Ollama 双模式）
 └── README.md
 ```
 
 ---
 
-## 🚀 部署（Cloudflare Pages）
+## 🚀 部署（Vercel）
 
-### 🍎 Mac
+### 1) 本地预览（纯前端）
 
 ```bash
 git clone https://github.com/pcheng0610/Diviner.git
 cd Diviner
 
-npm install -g wrangler
-wrangler login
-wrangler pages project create diviner --production-branch main
-
-echo "你的API密钥" | wrangler pages secret put MODELSCOPE_API_KEY --project-name=diviner
-echo "你的API密钥" | wrangler pages secret put IFLOW_API_KEY --project-name=diviner
-echo "你的API密钥" | wrangler pages secret put HUGGINGFACE_API_KEY --project-name=diviner
-
-wrangler pages deploy . --project-name=diviner
+python3 -m http.server 8000
 ```
 
-### 🪟 Windows
+### 2) 本地调试（Ollama 模式）
 
-```cmd
-git clone https://github.com/pcheng0610/Diviner.git
-cd Diviner
+```bash
+# 启动 Ollama
+ollama serve
+ollama pull llama3.1
 
-npm install -g wrangler
-wrangler login
-wrangler pages project create diviner --production-branch main
-
-echo 你的API密钥 | wrangler pages secret put MODELSCOPE_API_KEY --project-name=diviner
-echo 你的API密钥 | wrangler pages secret put IFLOW_API_KEY --project-name=diviner
-echo 你的API密钥 | wrangler pages secret put HUGGINGFACE_API_KEY --project-name=diviner
-
-wrangler pages deploy . --project-name=diviner
+# 通过 Vercel Dev 运行 /api/chat
+OLLAMA_BASE_URL=http://localhost:11434 npx vercel dev
 ```
 
 ---
 
-## 🛡️ 安全说明
+## ☁️ 线上部署（Hugging Face 模式）
 
-- API 密钥存于云端环境变量，前端不可见
-- 所有请求经由服务端中转，避免泄露真实接口
+1. 在 Vercel 控制台设置环境变量：
 
+```
+HF_TOKEN=你的 Hugging Face Token
+HF_MODEL=meta-llama/Llama-3.1-8B-Instruct   # 可选
+```
+
+2. 推送到 GitHub，Vercel 自动部署。
+
+---
+
+## 🔐 安全说明
+
+- API 密钥存于云端环境变量，前端不可见  
+- 所有请求经由服务端中转，避免泄露真实接口  
+- 本地调试使用 Ollama，不依赖任何 Key  
